@@ -5,7 +5,8 @@
         <title>Split It</title>
         <style type = 'text/css'>
             body {
-                background-color: #145374;
+                margin-top: 100px;
+                background-color: #145374;  
             }
             p {
                 font-size: 16pt;
@@ -14,6 +15,28 @@
             h1 {
                 font-size: 2.5em;
                 font-family: monaco, dejavu sans mono, ocr-a, ocr-b;
+            }
+            button {
+                background-color: #555555;
+                border: none;
+                color: white;
+                padding: 5px 15px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 14px;
+            }
+            input[type=text]{
+                padding:5px; 
+                border:2px solid #ccc; 
+                -webkit-border-radius: 5px;
+                border-radius: 5px;
+            }
+            input[type=number]{
+                padding:5px; 
+                border:2px solid #ccc; 
+                -webkit-border-radius: 5px;
+                border-radius: 5px;
             }
             #receipt{
                 background-color: #eff3f9;
@@ -24,12 +47,39 @@
             }
             #header {
                 font-family: monaco, serif;
+                font-size: 1em;    
+            }
+            #dishes{
+                text-align: left; 
+                font-family: monaco, dejavu sans mono, serif;
+                margin-right: 25%;  
+            }
+            #addPerson{
+                margin-left: 25px;
+                margin-top: 25px;
+                margin-bottom: 25px;
+                text-align: left;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
                 font-size: 1em;
+            }
+            #total{
+                margin-top: 75px;
+                margin-right: 25px;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                text-align: right;
+                line-height: 20pt;
             }
         </style>
     </head>
     <body>
+
+
         <div id = 'receipt'>
+            <form id="addPerson">
+                <input type="text" placeholder="Name"/>
+                <input type="number" placeholder="Price"/><br>
+                <button>Add</button>
+            </form>
             <div id = 'header'>
                 <h1>Check</h1>
                 <h2>Bill Information</h2>
@@ -37,26 +87,21 @@
                     <script src = "display.js"></script>
                 </div>
             </div>
+            <div id="dishes">
+                <ul>
+                    <h3 class="title">Dishes</h3>
+                </ul>
+            </div>
+            <script src="getInfo.js"></script>
+            <div id = "total">
+                <form id="getBillInfo">
+                    Subtotal: <br>
+                    <input type="text" name="subtotal"><br>
+                    Total: <br>
+                    <input type="text" name="total"><br><br>
+                </form>    
+            </div>    
         </div>
-        
-        <form id="getBillInfo">
-            Subtotal: <br>
-            <input type="text" name="subtotal"><br>
-            Total: <br>
-            <input type="text" name="total"><br><br>
-        </form>
-        <form id="addPerson">
-            <input type="text" placeholder="Name"/>
-            <input type="number" placeholder="Price"/><br>
-            <button>Add</button>
-        </form>
-        <div id="dishes">
-            <ul>
-                <h3 class="title">Dishes</h3>
-            </ul>
-        </div>
-        <script src="getInfo.js"></script>
-
     </body>
 </html>
 
