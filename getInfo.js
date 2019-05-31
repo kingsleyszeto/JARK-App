@@ -1,6 +1,13 @@
 const addPerson = document.forms['addPerson'];
 
-const dishes = document.querySelector('#dishes ul');
+const dishes = document.getElementById('dishes');
+
+dishes.addEventListener('click', function(e){
+    if(e.target.className == 'delete'){
+        const li = e.target.parentElement;
+        li.parentNode.removeChild(li);
+    }
+});
 
 // for (i=0; i < document.forms['getUserInfo'].)
 addPerson.addEventListener('submit', function(e){
@@ -13,13 +20,23 @@ addPerson.addEventListener('submit', function(e){
      
     const li = document.createElement('li');
 
-    const personName = document.createElement('span');
-    const dishPrice = document.createElement('span');
+    // li.innerHTML = document.getElementById('inputFormat').innerHTML;
+
+    const personName = document.createElement('input');
+    personName.type = 'text';
+    personName.placeholder = 'Name';
+
+    const dishPrice = document.createElement('input');
+    dishPrice.type = 'number';
+    dishPrice.placeholder = 'Price';
+
     const deleteBtn = document.createElement('span');
 
-    personName.textContent = name;
-    dishPrice.textContent = price;
+    // personName.textContent = name;
+    // dishPrice.textContent = price;
     deleteBtn.textContent = 'delete';
+
+    deleteBtn.classList.add('delete');
 
     li.appendChild(personName);
     li.appendChild(dishPrice);

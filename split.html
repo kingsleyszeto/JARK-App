@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
+        <link href="styles.css" rel="stylesheet" />
         <meta charset = "utf-8">
         <title>Split It</title>
         <style type = 'text/css'>
@@ -76,34 +77,40 @@
     <body>
 
 
-        <div id = 'receipt'>
-            <form id="addPerson">
-                <input type="text" placeholder="Name"/>
-                <input type="number" placeholder="Price"/><br>
-                <button>Add</button>
-            </form>
-            <div id = 'header'>
-                <h1>Check</h1>
-                <h2>Bill Information</h2>
-                <div id = 'bill'>
-                    <script src = "display.js"></script>
+            <div id = 'receipt'>
+                <form id="addPerson">
+                    <ul id="dishes">
+                        <li id="inputFormat">
+                            <input type="text" placeholder="Name"/>
+                            <input type="number" placeholder="Price"/><br>
+                        </li>
+    
+                    </ul>
+                    <button>Add</button>
+    
+                </form>
+                <div id = 'header'>
+                    <h1>Check</h1>
+                    <h2>Bill Information</h2>
+                    <div id = 'bill'>
+                        <script src = "display.js"></script>
+                    </div>
                 </div>
+                <div >
+                    <ul>
+                        <h3 class="title">Dishes</h3>
+                    </ul>
+                </div>
+                <script src="getInfo.js"></script>
+                <div id = "total">
+                    <form id="getBillInfo">
+                        Subtotal: <br>
+                        <input type="text" name="subtotal"><br>
+                        Total: <br>
+                        <input type="text" name="total"><br><br>
+                    </form>    
+                </div>    
             </div>
-            <div id="dishes">
-                <ul>
-                    <h3 class="title">Dishes</h3>
-                </ul>
-            </div>
-            <script src="getInfo.js"></script>
-            <div id = "total">
-                <form id="getBillInfo">
-                    Subtotal: <br>
-                    <input type="text" name="subtotal"><br>
-                    Total: <br>
-                    <input type="text" name="total"><br><br>
-                </form>    
-            </div>    
-        </div>
     </body>
 </html>
 
